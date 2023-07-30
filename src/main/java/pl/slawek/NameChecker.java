@@ -17,11 +17,7 @@ public class NameChecker
         } while (name == null);
 
         checkGender();
-
-        System.out.printf("%s %s.\n", HELLO, name);
-
-        System.out.printf("Twoje name ma %s znaków\n", name.length());
-
+        printInfoAboutName();
         printNameAsColumn();
     }
 
@@ -61,7 +57,16 @@ public class NameChecker
         }
     }
 
+    private static void printInfoAboutName() {
+        System.out.printf("%s %s.\n", HELLO, name);
+
+        System.out.printf("Twoje name ma %s znaków\n", name.length());
+
+        System.out.printf("Jesteś płci %s. Znak twojej płci to %s\n", sex, sexSymbol);
+    }
+
     private static void printNameAsColumn() {
+        System.out.println("Twoje imię zapisane w kolumne wielkimi literami:");
         for (char letter : name.toCharArray()) {
             System.out.println(String.valueOf(letter).toUpperCase(Locale.ROOT));
         }
