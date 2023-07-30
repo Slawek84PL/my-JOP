@@ -37,7 +37,7 @@ public class NameChecker
         System.out.println("Podaj swoje imię:");
         String tempName = scanner.nextLine();
 
-        if (!checkName(tempName) || tempName.isEmpty()) {
+        if (tempName.isEmpty() || !checkName(tempName)) {
             System.out.printf("%s nie wygląda to na imię człowieka\n", tempName);
         }
     }
