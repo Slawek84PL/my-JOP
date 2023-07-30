@@ -22,7 +22,7 @@ public class NameChecker
 
         System.out.printf("Twoje name ma %s znaków\n", name.length());
 
-        printNameAsClumn();
+        printNameAsColumn();
     }
 
     private static void getNameForHello() {
@@ -61,7 +61,7 @@ public class NameChecker
         }
     }
 
-    private static void printNameAsClumn() {
+    private static void printNameAsColumn() {
         for (char letter : name.toCharArray()) {
             System.out.println(String.valueOf(letter).toUpperCase(Locale.ROOT));
         }
