@@ -3,10 +3,6 @@ package pl.slawek;
 import java.util.Locale;
 import java.util.Scanner;
 
-/**
- * Hello world!
- *
- */
 public class NameChecker
 {
     private static final String HELLO = "Witaj";
@@ -26,9 +22,7 @@ public class NameChecker
 
         System.out.printf("Twoje name ma %s znaków\n", name.length());
 
-        for (char letter : name.toCharArray()) {
-            System.out.println(String.valueOf(letter).toUpperCase(Locale.ROOT));
-        }
+        printNameAsClumn();
     }
 
     private static void getNameForHello() {
@@ -43,20 +37,17 @@ public class NameChecker
     }
 
     private static boolean checkName(String nameForCheck) {
-
         String[] splitName = nameForCheck.split("[^A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]");
 
         String tempName = "";
         for (int i = 0; i < splitName.length; i++) {
             tempName = tempName.concat(splitName[i]);
-
         }
 
         if (tempName.length() > 1) {
             name = tempName;
             return true;
         }
-
         return false;
     }
 
@@ -67,6 +58,12 @@ public class NameChecker
         } else {
             sex = 77;
             sexSymbol = 9794;
+        }
+    }
+
+    private static void printNameAsClumn() {
+        for (char letter : name.toCharArray()) {
+            System.out.println(String.valueOf(letter).toUpperCase(Locale.ROOT));
         }
     }
 }
