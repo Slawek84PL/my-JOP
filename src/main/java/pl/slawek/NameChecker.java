@@ -46,15 +46,16 @@ public class NameChecker
 
         String[] splitName = nameForCheck.split("[^A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]");
 
-            String tempName = "";
-            for (final String s : splitName) {
-                tempName = tempName.concat(s);
-            }
+        String tempName = "";
+        for (int i = 0; i < splitName.length; i++) {
+            tempName = tempName.concat(splitName[i]);
 
-            if (tempName.length() > 1) {
-                name = tempName;
-                return true;
-            }
+        }
+
+        if (tempName.length() > 1) {
+            name = tempName;
+            return true;
+        }
 
         return false;
     }
