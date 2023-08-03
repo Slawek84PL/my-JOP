@@ -32,7 +32,7 @@ public class NameChecker
         }
     }
 
-    private static boolean checkName(String nameForCheck) {
+    static boolean checkName(String nameForCheck) {
         String[] splitName = nameForCheck.split("[^A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]");
 
         String tempName = "";
