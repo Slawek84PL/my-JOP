@@ -10,8 +10,7 @@ public class NameChecker
     private static char sex;
     private static char sexSymbol;
 
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ){
         do {
             getNameFromUser();
         } while (name == null);
@@ -60,7 +59,7 @@ public class NameChecker
     private static void printInfoAboutName() {
         System.out.printf("%s %s.\n", HELLO, name);
 
-        System.out.printf("Twoje name ma %s znaków\n", name.length());
+        System.out.printf("Twoje imię ma %s znaków\n", name.length());
 
         System.out.printf("Jesteś płci %s. Znak twojej płci to %s\n", sex, sexSymbol);
     }
