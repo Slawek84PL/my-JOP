@@ -13,7 +13,7 @@ public class NameChecker
     public static void main( String[] args )
     {
         do {
-            getNameForHello();
+            getNameFromUser();
         } while (name == null);
 
         checkGender();
@@ -21,7 +21,7 @@ public class NameChecker
         printNameAsColumn();
     }
 
-    private static void getNameForHello() {
+    private static void getNameFromUser() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Podaj swoje imię:");
