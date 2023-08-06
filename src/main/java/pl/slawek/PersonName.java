@@ -1,13 +1,21 @@
 package pl.slawek;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+
 import java.util.Locale;
 
+@Getter
 class PersonName {
     private String name;
+
+    @Getter(AccessLevel.PRIVATE)
     private char sex;
+
+    @Getter(AccessLevel.PRIVATE)
     private char sexSymbol;
 
-    private boolean checkName(String nameForCheck) {
+    public boolean checkName(String nameForCheck) {
         String[] splitName = nameForCheck.split("[^A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]");
 
         String tempName = "";
@@ -22,7 +30,7 @@ class PersonName {
         return false;
     }
 
-    private void checkGender() {
+    public void checkGender() {
         if (name.endsWith("a")) {
             this.sex = 75;
             this.sexSymbol = 9792;
@@ -31,14 +39,14 @@ class PersonName {
             this.sexSymbol = 9794;
         }
     }
-    private void printNameAsColumn() {
+    public void printNameAsColumn() {
         System.out.println("Twoje imię zapisane w kolumne wielkimi literami:");
         for (char letter : name.toCharArray()) {
             System.out.println(String.valueOf(letter).toUpperCase(Locale.ROOT));
         }
     }
 
-    private void printInfoAboutName() {
+    public void printInfoAboutName() {
         System.out.printf("Twoje name ma %s znaków\n", name.length());
 
         System.out.printf("Jesteś płci %s. Znak twojej płci to %s\n", sex, sexSymbol);
