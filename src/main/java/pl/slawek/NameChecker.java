@@ -13,7 +13,6 @@ public class NameChecker
             getNameForHello();
         } while (personName.getName() == null);
 
-        personName.checkGender();
         printInfoAboutName();
         personName.printNameAsColumn();
     }

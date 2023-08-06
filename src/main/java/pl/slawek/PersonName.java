@@ -25,12 +25,13 @@ class PersonName {
 
         if (tempName.length() > 1) {
             name = tempName;
+            checkGender();
             return true;
         }
         return false;
     }
 
-    public void checkGender() {
+    private void checkGender() {
         if (name.endsWith("a")) {
             this.sex = 75;
             this.sexSymbol = 9792;
