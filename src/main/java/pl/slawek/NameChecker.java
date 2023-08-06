@@ -7,17 +7,16 @@ public class NameChecker
     private static final String HELLO = "Witaj";
     private static final PersonName personName = new PersonName();
 
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ){
         do {
-            getNameForHello();
+            getNameFromUser();
         } while (personName.getName() == null);
 
         printInfoAboutName();
         personName.printNameAsColumn();
     }
 
-    private static void getNameForHello() {
+    private static void getNameFromUser() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Podaj swoje imię:");

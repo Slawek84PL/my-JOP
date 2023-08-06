@@ -1,38 +1,28 @@
 package pl.slawek;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class NameCheckerTest
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public NameCheckerTest(String testName )
-    {
-        super( testName );
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class NameCheckerTest {
+
+    @Test
+    public void shouldClearStringWithoutProhibitedCharacters() {
+
+        String string = "Imię";
+        String stringWithNumbers = "12Imię";
+        String onlyNumbers = "1234";
+        String emptyString = "";
+        String toShort = "a";
+        int number = 1;
+
+        assertTrue(NameChecker.checkName(string));
+        assertTrue(NameChecker.checkName(stringWithNumbers));
+        assertFalse(NameChecker.checkName(onlyNumbers));
+        assertFalse(NameChecker.checkName(emptyString));
+        assertFalse(NameChecker.checkName(toShort));
+        assertFalse(NameChecker.checkName(String.valueOf(number)));
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( NameCheckerTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }
