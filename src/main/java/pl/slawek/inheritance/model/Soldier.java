@@ -1,11 +1,11 @@
 package pl.slawek.inheritance.model;
 
-public class Solider extends Human {
+public class Soldier extends Human {
     private static int killedEnemies;
     private int myKilledEnemies;
     private String nationality;
 
-    public Solider(final String name, final String surname, final int age, final int growth, String nationality) {
+    public Soldier(final String name, final String surname, final int age, final int growth, String nationality) {
         super(name, surname, age, growth);
         this.nationality = nationality;
     }
