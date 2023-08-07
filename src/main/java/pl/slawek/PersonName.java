@@ -24,7 +24,7 @@ class PersonName {
         }
 
         if (tempName.length() > 1) {
-            name = tempName;
+            this.name = tempName;
             setGender();
             return true;
         }
