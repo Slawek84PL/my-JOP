@@ -6,6 +6,8 @@ import lombok.*;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
+@EqualsAndHashCode
 public abstract class Human {
     private String name;
     private String surname;

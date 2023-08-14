@@ -1,7 +1,11 @@
 package pl.slawek.model.soldiers;
 
-class Support extends Soldier{
+import lombok.ToString;
 
+@ToString(callSuper = true)
+public class Support extends Soldier{
+
+    @ToString.Exclude
     private boolean delivery;
 
     public Support(final String name, final String surname, final int age, final int growth, final String nationality) {

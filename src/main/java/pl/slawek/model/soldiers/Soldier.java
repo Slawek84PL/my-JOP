@@ -1,10 +1,13 @@
 package pl.slawek.model.soldiers;
 
+import lombok.ToString;
 import pl.slawek.model.Human;
 
+@ToString(onlyExplicitlyIncluded = true, callSuper = true)
 public class Soldier extends Human {
     private static int killedEnemies;
     private int myKilledEnemies;
+    @ToString.Include
     private String nationality;
 
     public Soldier(final String name, final String surname, final int age, final int growth, String nationality) {
@@ -15,14 +18,5 @@ public class Soldier extends Human {
     public void kill() {
         killedEnemies++;
         myKilledEnemies++;
-    }
-
-    @Override
-    public String toString() {
-        return "Tajne:" +
-                " Właśnie zabiłem." +
-                " w sumie zabiłem " + myKilledEnemies +
-                ", mój kraj to " + nationality +
-                ", moja jednostka zabiła w sumie " + killedEnemies;
     }
 }
