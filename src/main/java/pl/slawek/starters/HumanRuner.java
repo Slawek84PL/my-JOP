@@ -1,8 +1,8 @@
-package pl.slawek.inheritance;
+package pl.slawek.starters;
 
-import pl.slawek.inheritance.model.Chef;
-import pl.slawek.inheritance.model.Human;
-import pl.slawek.inheritance.model.Soldier;
+import pl.slawek.model.Chef;
+import pl.slawek.model.Human;
+import pl.slawek.model.soldiers.Soldier;
 
 import java.util.ArrayList;
 import java.util.List;

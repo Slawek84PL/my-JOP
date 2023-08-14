@@ -1,4 +1,4 @@
-package pl.slawek.inheritance.model;
+package pl.slawek.model;
 
 import lombok.*;
 

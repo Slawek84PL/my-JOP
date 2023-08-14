@@ -1,4 +1,4 @@
-package pl.slawek;
+package pl.slawek.model;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.util.Locale;
 
 @Getter
-class PersonName {
+public class PersonName {
     private String name;
 
     @Getter(AccessLevel.PRIVATE)

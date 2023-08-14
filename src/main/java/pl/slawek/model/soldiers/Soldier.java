@@ -1,4 +1,6 @@
-package pl.slawek.inheritance.model;
+package pl.slawek.model.soldiers;
+
+import pl.slawek.model.Human;
 
 public class Soldier extends Human {
     private static int killedEnemies;
