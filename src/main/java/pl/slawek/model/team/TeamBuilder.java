@@ -1,18 +1,16 @@
 package pl.slawek.model.team;
 
+import lombok.Getter;
 import lombok.ToString;
-import pl.slawek.model.soldiers.Medic;
-import pl.slawek.model.soldiers.Soldier;
-import pl.slawek.model.soldiers.Support;
+import pl.slawek.model.soldiers.SoliderBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 @ToString
 public class TeamBuilder {
-
-    List<Team> teams = new ArrayList<>();
+    @Getter
+    private List<Team> teams = new ArrayList<>();
+    private SoliderBuilder soliderBuilder = new SoliderBuilder();
 
     public void build() {
         Scanner scanner = new Scanner(System.in);
@@ -20,9 +18,9 @@ public class TeamBuilder {
         String teamName = scanner.nextLine();
 
         Team team = new Team();
-        team.setSoldiers(new Medic("Lekarz", "Leczący", 20, 185, teamName));
-        team.setSoldiers(new Support("Wsparcie", "Amo", 21, 175, teamName));
-        team.setSoldiers(new Soldier("Żołnierz", "Zabijający", 21, 175, teamName));
+        for (int i = 0; i < 4; i++) {
+            team.setSoldiers(soliderBuilder.build(teamName));
+        }
         teams.add(team);
     }
 }
