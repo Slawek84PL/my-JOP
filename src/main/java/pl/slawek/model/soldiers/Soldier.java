@@ -1,7 +1,6 @@
 package pl.slawek.model.soldiers;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import pl.slawek.model.Human;
@@ -28,5 +27,10 @@ public class Soldier extends Human {
     public void kill() {
         killedEnemies++;
         myKilledEnemies++;
+    }
+
+    public void shot(int amo, Soldier enemy) {
+        this.weapon.setAmo(amo);
+        enemy.health -= amo;
     }
 }
