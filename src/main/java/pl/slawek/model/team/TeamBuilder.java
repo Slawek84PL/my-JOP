@@ -10,17 +10,21 @@ import java.util.*;
 public class TeamBuilder {
     @Getter
     private List<Team> teams = new ArrayList<>();
-    private SoliderBuilder soliderBuilder = new SoliderBuilder();
+    private final SoliderBuilder soliderBuilder = new SoliderBuilder();
 
     public void build() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj nazwe twojej drużyny");
         String teamName = scanner.nextLine();
 
-        Team team = new Team();
-        for (int i = 0; i < 4; i++) {
-            team.setSoldiers(soliderBuilder.build(teamName));
-        }
-        teams.add(team);
+        Team myTeam = new Team();
+        myTeam.getSoldiers().addAll(soliderBuilder.build(teamName, "pl"));
+        teams.add(myTeam);
+
+        System.out.println("\nPo stronie wroga walczą:");
+
+        Team enemyTeam = new Team();
+        enemyTeam.getSoldiers().addAll(soliderBuilder.build("Wróg", "de-AT"));
+        teams.add(enemyTeam);
     }
 }
