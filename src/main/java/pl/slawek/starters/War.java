@@ -1,33 +1,31 @@
 package pl.slawek.starters;
 
-import pl.slawek.model.soldiers.Medic;
-import pl.slawek.model.soldiers.Soldier;
-import pl.slawek.model.soldiers.Support;
-import pl.slawek.model.team.Team;
+import pl.slawek.model.Batlefield;
+import pl.slawek.model.team.TeamBuilder;
 
 public class War {
 
-    private static final Team myTeam = new Team();
-    private static final Team enemyTeam = new Team();
+    private static final TeamBuilder teamBuilder = new TeamBuilder();
+    private static final Batlefield batlefield = new Batlefield();
+    private static final int SHOOTER_TEAM = 0;
+    private static final int ENEMY_TEAM = 1;
 
     public static void main(String[] args) {
-        Soldier myMedic = new Medic("Lekarz", "Leczący", 20, 185, "PL");
-        Soldier mySupport = new Support("Wsparcie", "Amo", 21, 175, "PL");
-        Soldier mySoldier = new Soldier("Żołnierz", "Zabijający", 21, 175, "PL");
+        teamBuilder.build();
 
-        myTeam.setSoldiers(myMedic);
-        myTeam.setSoldiers(mySupport);
-        myTeam.setSoldiers(mySoldier);
+        do {
+                batlefield.fight(teamBuilder.getTeams(), SHOOTER_TEAM, ENEMY_TEAM, false);
 
-        Soldier enemyMedic = new Medic("Lekarz", "Leczący", 20, 185, "RUS");
-        Soldier enemySupport = new Support("Wsparcie", "Amo", 21, 175, "RUS");
-        Soldier enemySoldier = new Soldier("Żołnierz", "Zabijający", 21, 175, "RUS");
+                System.out.println("\nKontratak wroga");
 
-        enemyTeam.setSoldiers(enemyMedic);
-        enemyTeam.setSoldiers(enemySupport);
-        enemyTeam.setSoldiers(enemySoldier);
+                batlefield.fight(teamBuilder.getTeams(), ENEMY_TEAM, SHOOTER_TEAM, true);
 
-        System.out.println(myTeam);
-        System.out.println(enemyTeam);
+        } while (!teamBuilder.getTeams().get(0).getSoldiers().isEmpty() && !teamBuilder.getTeams().get(1).getSoldiers().isEmpty());
+
+        System.out.println(teamBuilder.getTeams().get(0).getSoldiers().size());
+        System.out.println(teamBuilder.getTeams().get(1).getSoldiers().size());
+        System.out.println(batlefield.getTeamOfTheDead().soldiers.toString());
     }
+
+
 }
