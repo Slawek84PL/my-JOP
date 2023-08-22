@@ -14,16 +14,16 @@ public class Weapon {
     @Getter
     private int amo;
 
-    private final int MAX_AMO = 12;
+    private final int MAX_AMO = 50;
 
     public Weapon() {
         amo = MAX_AMO;
     }
 
     public void setAmo(int amo) {
-        if (this.getAmo() == amo) {
-            System.out.println("Musisz przełądować");
-        }
+//        if (this.getAmo() == amo) {
+//            System.out.println("Musisz przełądować");
+//        }
         this.amo -= amo;
     }
 
