@@ -1,6 +1,6 @@
 package pl.slawek.starters;
 
-import pl.slawek.model.Batlefield;
+import pl.slawek.model.war.Batlefield;
 import pl.slawek.model.team.TeamBuilder;
 
 public class War {

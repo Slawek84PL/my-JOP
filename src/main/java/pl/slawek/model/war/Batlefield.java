@@ -1,8 +1,7 @@
-package pl.slawek.model;
+package pl.slawek.model.war;
 
 import lombok.Getter;
 import pl.slawek.model.soldiers.Soldier;
-import pl.slawek.model.soldiers.SoliderBuilder;
 import pl.slawek.model.team.Team;
 import pl.slawek.model.team.TeamOfTheDead;
 

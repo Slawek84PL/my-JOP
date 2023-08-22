@@ -1,4 +1,4 @@
-package pl.slawek.model;
+package pl.slawek.model.war;
 
 import pl.slawek.model.soldiers.Soldier;
 
