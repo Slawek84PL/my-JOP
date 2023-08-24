@@ -8,6 +8,12 @@ public class Medic extends Soldier{
     @ToString.Exclude
     private boolean rescue;
 
+    @Override
+    public void addSpecialActions() {
+        super.addSpecialActions();
+        getActionList().addActionToList("Lecz");
+    }
+
     public void setRescue() {
         this.rescue = true;
     }
