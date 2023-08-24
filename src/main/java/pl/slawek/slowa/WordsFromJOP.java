@@ -14,5 +14,6 @@ public class WordsFromJOP {
         words.add(new Word(10, "ze", 8, 7, "00:33"));
         words.add(new Word(9, "programistą", 8, 10, "02:00"));
         words.add(new Word(7, "prostu", 9, 4, "03:17"));
+        words.add(new Word(11, "świetnymi", 10, 7,"05:57"));
     }
 }
