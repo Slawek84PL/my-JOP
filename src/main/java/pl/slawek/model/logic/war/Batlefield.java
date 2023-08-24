@@ -1,4 +1,4 @@
-package pl.slawek.model.war;
+package pl.slawek.model.logic.war;
 
 import lombok.Getter;
 import pl.slawek.model.soldiers.Soldier;

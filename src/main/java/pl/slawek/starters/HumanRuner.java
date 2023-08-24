@@ -11,13 +11,13 @@ class HumanRuner {
 
     public static void main(String[] args) {
 
-        Human soldier = new Soldier("Kazek", "Zabójca", 44, 175, "Polska");
-        Soldier angrySoldier = new Soldier("Stefan", "Morderca", 43, 185, "Polska");
+//        Human soldier = new Soldier("Kazek", "Zabójca", 44, 175, "Polska");
+//        Soldier angrySoldier = new Soldier("Stefan", "Morderca", 43, 185, "Polska");
         Human chef = new Chef("Magda", "GesLer", 150, 115);
 
         List<Human> humans = new ArrayList<>();
-        humans.add(soldier);
-        humans.add(angrySoldier);
+//        humans.add(soldier);
+//        humans.add(angrySoldier);
         humans.add(chef);
 
         for (Human h: humans) {
