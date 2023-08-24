@@ -28,6 +28,7 @@ public class SoliderBuilder {
             soldier.setSurname(faker.name().lastName());
             soldier.setNationality(teamName);
             soldier.setWeapon(createWeapon());
+            soldier.addSpecialActions();
             sayHello(soldier);
         }
 
