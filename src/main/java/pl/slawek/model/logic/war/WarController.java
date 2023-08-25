@@ -13,18 +13,7 @@ class WarController {
     private PlayerMoveReader playerMoveReader = new PlayerMoveReader();
     private final int CORECT_TO_LIST_INDEX = 1;
     private final int DEFOULT_VALUE = 0;
-    int getShooterAction(final Soldier shooter) {
-        printOptions(shooter.getActionList());
-        return getPlayerAnswer(shooter.getActionList().getActionList().size());
-    }
-
-    void printOptions(ActionList actionList) {
-        for (Map.Entry<Integer, Action> action : actionList.getActionList().entrySet()) {
-            int id = action.getKey() + CORECT_TO_LIST_INDEX;
-            System.out.printf("%s - %s\n", id, action.getValue().getActionName());
-        }
-    }
-
+    
     Soldier getSoldierToGame(List<Soldier> soldierList) {
 
         for (int i = 0; i < soldierList.size(); i++) {
@@ -34,8 +23,19 @@ class WarController {
                     soldier.getName(), soldier.getSurname(),soldier.getHealth(),
                     soldier.getWeapon().getAmo());
         }
-
         return soldierList.get(getPlayerAnswer(soldierList.size()));
+    }
+
+     int getShooterAction(final Soldier shooter) {
+        printOptions(shooter.getActionList());
+        return getPlayerAnswer(shooter.getActionList().getActionList().size());
+    }
+
+    void printOptions(ActionList actionList) {
+        for (Map.Entry<Integer, Action> action : actionList.getActionList().entrySet()) {
+            int id = action.getKey() + CORECT_TO_LIST_INDEX;
+            System.out.printf("%s - %s\n", id, action.getValue().getActionName());
+        }
     }
 
     int getPlayerAnswer(int maxValue) {
