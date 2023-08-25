@@ -24,7 +24,7 @@ public class Batlefield {
             if (auto) {
                 int shooterInt = new Random().nextInt(0, teams.get(shooterTeam).getSoldiers().size());
                 int enemyInt = new Random().nextInt(0, teams.get(enemyTeam).getSoldiers().size());
-                int forHelpInt = new Random().nextInt(0, teams.get(enemyTeam).getSoldiers().size());
+                int forHelpInt = new Random().nextInt(0, teams.get(shooterTeam).getSoldiers().size());
 
                 shooter = teams.get(shooterTeam).getSoldiers().get(shooterInt);
                 action = new Random().nextInt(0, shooter.getActionList().getActionList().size());
