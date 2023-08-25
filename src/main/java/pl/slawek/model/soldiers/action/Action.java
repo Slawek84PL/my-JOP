@@ -1,9 +1,9 @@
 package pl.slawek.model.soldiers.action;
 
-class Action {
+public class Action {
     String actionName;
 
-    String getActionName() {
+    public String getActionName() {
         return actionName;
     }
 
