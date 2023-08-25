@@ -1,8 +1,8 @@
-package pl.slawek.model.team;
+package pl.slawek.war.model.team;
 
 import lombok.Getter;
 import lombok.ToString;
-import pl.slawek.model.soldiers.SoliderBuilder;
+import pl.slawek.war.model.soldiers.SoliderBuilder;
 
 import java.util.*;
 

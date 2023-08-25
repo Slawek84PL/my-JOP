@@ -1,4 +1,4 @@
-package pl.slawek.model;
+package pl.slawek.war.model;
 
 import lombok.AccessLevel;
 import lombok.Getter;

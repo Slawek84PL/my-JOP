@@ -1,7 +1,7 @@
-package pl.slawek.model.soldiers;
+package pl.slawek.war.model.soldiers;
 
 import com.github.javafaker.Faker;
-import pl.slawek.model.soldiers.weapon.Weapon;
+import pl.slawek.war.model.soldiers.weapon.Weapon;
 
 import java.util.ArrayList;
 import java.util.List;

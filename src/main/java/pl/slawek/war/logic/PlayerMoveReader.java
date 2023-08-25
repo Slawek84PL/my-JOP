@@ -1,6 +1,6 @@
-package pl.slawek.model.logic;
+package pl.slawek.war.logic;
 
-import pl.slawek.model.logic.exception.WrongNumberException;
+import pl.slawek.war.logic.exception.WrongNumberException;
 
 import java.util.Scanner;
 

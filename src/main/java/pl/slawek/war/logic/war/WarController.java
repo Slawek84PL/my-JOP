@@ -1,10 +1,10 @@
-package pl.slawek.model.logic.war;
+package pl.slawek.war.logic.war;
 
-import pl.slawek.model.logic.PlayerMoveReader;
-import pl.slawek.model.logic.exception.WrongNumberException;
-import pl.slawek.model.soldiers.Soldier;
-import pl.slawek.model.soldiers.action.Action;
-import pl.slawek.model.soldiers.action.ActionList;
+import pl.slawek.war.logic.PlayerMoveReader;
+import pl.slawek.war.logic.exception.WrongNumberException;
+import pl.slawek.war.model.soldiers.Soldier;
+import pl.slawek.war.model.soldiers.action.Action;
+import pl.slawek.war.model.soldiers.action.ActionList;
 
 import java.util.List;
 import java.util.Map;

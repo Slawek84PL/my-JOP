@@ -1,4 +1,4 @@
-package pl.slawek.model.soldiers;
+package pl.slawek.war.model.soldiers;
 
 import lombok.ToString;
 

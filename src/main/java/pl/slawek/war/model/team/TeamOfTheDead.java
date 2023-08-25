@@ -1,6 +1,6 @@
-package pl.slawek.model.team;
+package pl.slawek.war.model.team;
 
-import pl.slawek.model.soldiers.Soldier;
+import pl.slawek.war.model.soldiers.Soldier;
 
 import java.util.Deque;
 import java.util.LinkedList;

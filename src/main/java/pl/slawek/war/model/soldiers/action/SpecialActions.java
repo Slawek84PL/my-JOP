@@ -1,4 +1,4 @@
-package pl.slawek.model.soldiers.action;
+package pl.slawek.war.model.soldiers.action;
 
 public interface SpecialActions {
     void addSpecialActions();

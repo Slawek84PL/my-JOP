@@ -1,9 +1,9 @@
-package pl.slawek.model.logic.war;
+package pl.slawek.war.logic.war;
 
 import lombok.Getter;
-import pl.slawek.model.soldiers.Soldier;
-import pl.slawek.model.team.Team;
-import pl.slawek.model.team.TeamOfTheDead;
+import pl.slawek.war.model.soldiers.Soldier;
+import pl.slawek.war.model.team.Team;
+import pl.slawek.war.model.team.TeamOfTheDead;
 
 import java.util.List;
 import java.util.Random;

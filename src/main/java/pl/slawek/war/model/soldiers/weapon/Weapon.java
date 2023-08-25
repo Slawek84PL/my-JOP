@@ -1,4 +1,4 @@
-package pl.slawek.model.soldiers.weapon;
+package pl.slawek.war.model.soldiers.weapon;
 
 import lombok.AccessLevel;
 import lombok.Getter;

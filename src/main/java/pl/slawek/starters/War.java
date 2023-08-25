@@ -1,7 +1,7 @@
 package pl.slawek.starters;
 
-import pl.slawek.model.logic.war.Batlefield;
-import pl.slawek.model.team.TeamBuilder;
+import pl.slawek.war.logic.war.Batlefield;
+import pl.slawek.war.model.team.TeamBuilder;
 
 public class War {
 

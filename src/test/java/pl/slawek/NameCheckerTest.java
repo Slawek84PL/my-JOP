@@ -1,7 +1,7 @@
 package pl.slawek;
 
 import org.junit.Test;
-import pl.slawek.model.PersonName;
+import pl.slawek.war.model.PersonName;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

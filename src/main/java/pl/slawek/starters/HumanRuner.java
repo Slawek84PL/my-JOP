@@ -1,8 +1,8 @@
 package pl.slawek.starters;
 
-import pl.slawek.model.Chef;
-import pl.slawek.model.Human;
-import pl.slawek.model.soldiers.Soldier;
+import pl.slawek.war.model.Chef;
+import pl.slawek.war.model.Human;
+import pl.slawek.war.model.soldiers.Soldier;
 
 import java.util.ArrayList;
 import java.util.List;

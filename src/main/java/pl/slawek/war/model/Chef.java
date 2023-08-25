@@ -1,4 +1,4 @@
-package pl.slawek.model;
+package pl.slawek.war.model;
 
 public class Chef extends Human {
     public Chef(final String name, final String surname, final int age, final int growth) {

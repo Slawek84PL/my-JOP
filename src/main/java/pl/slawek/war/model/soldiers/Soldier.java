@@ -1,12 +1,12 @@
-package pl.slawek.model.soldiers;
+package pl.slawek.war.model.soldiers;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import pl.slawek.model.Human;
-import pl.slawek.model.soldiers.action.ActionList;
-import pl.slawek.model.soldiers.action.SpecialActions;
-import pl.slawek.model.soldiers.weapon.Weapon;
+import pl.slawek.war.model.Human;
+import pl.slawek.war.model.soldiers.action.ActionList;
+import pl.slawek.war.model.soldiers.action.SpecialActions;
+import pl.slawek.war.model.soldiers.weapon.Weapon;
 
 @Setter
 @ToString(onlyExplicitlyIncluded = true, callSuper = true)

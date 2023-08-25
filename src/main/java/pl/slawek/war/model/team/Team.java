@@ -1,9 +1,9 @@
-package pl.slawek.model.team;
+package pl.slawek.war.model.team;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import pl.slawek.model.soldiers.Soldier;
+import pl.slawek.war.model.soldiers.Soldier;
 
 import java.util.LinkedList;
 import java.util.List;

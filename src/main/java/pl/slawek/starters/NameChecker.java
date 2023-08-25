@@ -1,6 +1,6 @@
 package pl.slawek.starters;
 
-import pl.slawek.model.PersonName;
+import pl.slawek.war.model.PersonName;
 
 import java.util.Scanner;
 
