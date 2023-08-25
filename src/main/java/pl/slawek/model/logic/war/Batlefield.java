@@ -17,6 +17,7 @@ public class Batlefield {
     public void fight(List<Team> teams, int shooterTeam, int enemyTeam, boolean auto) {
         Soldier shooter;
         Soldier enemy;
+        int action;
 
         if (!teams.get(shooterTeam).getSoldiers().isEmpty() && !teams.get(enemyTeam).getSoldiers().isEmpty()) {
             if (auto) {
@@ -24,36 +25,42 @@ public class Batlefield {
                 int enemyInt = new Random().nextInt(0, teams.get(enemyTeam).getSoldiers().size());
 
                 shooter = teams.get(shooterTeam).getSoldiers().get(shooterInt);
+                action = new Random().nextInt(0, shooter.getActionList().getActionList().size());
                 enemy = teams.get(enemyTeam).getSoldiers().get(enemyInt);
             } else {
                 System.out.println("\nWybierz żołnierza do ataku");
                 shooter = warController.getSoldierToGame(teams.get(shooterTeam).getSoldiers());
-                int action = warController.getShooterAction(shooter);
+                action = warController.getShooterAction(shooter);
 
                 System.out.println("\nWybierz żołnierza którego chcesz zaatakować");
                 enemy = warController.getSoldierToGame(teams.get(enemyTeam).getSoldiers());
             }
 
-            System.out.printf("\nAtak: %s %s z drużyny %s.\n", shooter.getName(), shooter.getSurname(), shooter.getNationality());
-            System.out.printf("Obrona: %s %s z drużyny %s.\n", enemy.getName(), enemy.getSurname(), enemy.getNationality());
-
-            int amoShot = cheskShooterWeapon(shooter.getWeapon().getAmo());
-
-            if (amoShot > 0) {
-
-                shooter.shot(amoShot, enemy);
-
-                System.out.printf("%s trafia %s %s razy.\n", shooter.getName(), enemy.getName(), amoShot);
-
-                checkEnemyHealth(teams.get(enemyTeam), enemy);
-            } else {
-                System.out.printf("Niestety %s ma pusty magazynek.\n", shooter.getName());
-            }
+            atack(teams.get(enemyTeam), shooter, enemy);
+            
         } else {
             System.out.println(teams.get(shooterTeam).getSoldiers().size());
             System.out.println(teams.get(enemyTeam).getSoldiers().size());
         }
 
+    }
+
+    private void atack(Team enemyTeam, Soldier shooter, Soldier enemy) {
+        System.out.printf("\nAtak: %s %s z drużyny %s.\n", shooter.getName(), shooter.getSurname(), shooter.getNationality());
+        System.out.printf("Obrona: %s %s z drużyny %s.\n", enemy.getName(), enemy.getSurname(), enemy.getNationality());
+
+        int amoShot = cheskShooterWeapon(shooter.getWeapon().getAmo());
+
+        if (amoShot > 0) {
+
+            shooter.shot(amoShot, enemy);
+
+            System.out.printf("%s trafia %s %s razy.\n", shooter.getName(), enemy.getName(), amoShot);
+
+            checkEnemyHealth(enemyTeam, enemy);
+        } else {
+            System.out.printf("Niestety %s ma pusty magazynek.\n", shooter.getName());
+        }
     }
 
     private int cheskShooterWeapon(int amoInWeapon) {
