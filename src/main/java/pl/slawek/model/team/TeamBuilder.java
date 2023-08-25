@@ -19,14 +19,14 @@ public class TeamBuilder {
 
         Team myTeam = new Team();
         myTeam.setName(teamName);
-        myTeam.getSoldiers().addAll(soliderBuilder.build(teamName, "pl"));
+        myTeam.getSoldiers().addAll(soliderBuilder.build(teamName, "pl", "\u001B[32m"));
         teams.add(myTeam);
 
         System.out.println("\nPo stronie wroga walczą:");
 
         Team enemyTeam = new Team();
         enemyTeam.setName("Wróg");
-        enemyTeam.getSoldiers().addAll(soliderBuilder.build("Wróg", "de-AT"));
+        enemyTeam.getSoldiers().addAll(soliderBuilder.build("Wróg", "de-AT", "\u001B[31m"));
         teams.add(enemyTeam);
     }
 }

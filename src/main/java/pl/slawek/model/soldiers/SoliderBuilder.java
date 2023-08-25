@@ -11,7 +11,7 @@ public class SoliderBuilder {
 
     Faker faker;
 
-    public List<Soldier> build(String teamName, String locale) {
+    public List<Soldier> build(String teamName, String locale, String color) {
         faker = new Faker(new Locale(locale));
 
         List<Soldier> tempSoldiersList = new ArrayList<>();
@@ -24,7 +24,7 @@ public class SoliderBuilder {
         tempSoldiersList.add(new Support());
 
         for (Soldier soldier : tempSoldiersList) {
-            soldier.setName(faker.name().firstName());
+            soldier.setName(color + faker.name().firstName() + "\u001B[0m");
             soldier.setSurname(faker.name().lastName());
             soldier.setNationality(teamName);
             soldier.setWeapon(createWeapon());
