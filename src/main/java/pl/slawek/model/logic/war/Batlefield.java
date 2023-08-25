@@ -15,11 +15,11 @@ public class Batlefield {
     private final WarController warController = new WarController();
 
     public void fight(List<Team> teams, int shooterTeam, int enemyTeam, boolean auto) {
-        Soldier shooter;
-        Soldier enemy;
+        Soldier shooter = null;
+        Soldier enemy = null;
         int action;
 
-        if (!teams.get(shooterTeam).getSoldiers().isEmpty() && !teams.get(enemyTeam).getSoldiers().isEmpty()) {
+        if (checkTeams(teams)) {
             if (auto) {
                 int shooterInt = new Random().nextInt(0, teams.get(shooterTeam).getSoldiers().size());
                 int enemyInt = new Random().nextInt(0, teams.get(enemyTeam).getSoldiers().size());
@@ -31,18 +31,29 @@ public class Batlefield {
                 System.out.println("\nWybierz żołnierza do ataku");
                 shooter = warController.getSoldierToGame(teams.get(shooterTeam).getSoldiers());
                 action = warController.getShooterAction(shooter);
-
-                System.out.println("\nWybierz żołnierza którego chcesz zaatakować");
-                enemy = warController.getSoldierToGame(teams.get(enemyTeam).getSoldiers());
             }
 
-            atack(teams.get(enemyTeam), shooter, enemy);
+            switch (action) {
+                case 0: 
+                    if (enemy == null) {
+                        System.out.println("\nWybierz żołnierza którego chcesz zaatakować");
+                        enemy = warController.getSoldierToGame(teams.get(enemyTeam).getSoldiers());
+                    }
+                    atack(teams.get(enemyTeam), shooter, enemy);
+                    break;
+                case 1:
+                    shooter.reload();
+                    System.out.printf("%s przeładowuje broń\n", shooter.getName());
+                    break;
+                case 2:
+                System.out.println("umiejętność specjalna");
+                    break;
+            }
             
         } else {
             System.out.println(teams.get(shooterTeam).getSoldiers().size());
             System.out.println(teams.get(enemyTeam).getSoldiers().size());
         }
-
     }
 
     private void atack(Team enemyTeam, Soldier shooter, Soldier enemy) {
@@ -61,6 +72,16 @@ public class Batlefield {
         } else {
             System.out.printf("Niestety %s ma pusty magazynek.\n", shooter.getName());
         }
+    }
+
+    private boolean checkTeams(List<Team> teams) {
+        for (Team team : teams) {
+            if (team.getSoldiers().isEmpty()) {
+                System.out.println("Wszyscy w zespole %s nieżyją");
+                return false;
+            }
+        }
+        return true;
     }
 
     private int cheskShooterWeapon(int amoInWeapon) {
