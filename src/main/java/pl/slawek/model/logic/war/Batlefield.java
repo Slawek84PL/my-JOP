@@ -51,8 +51,12 @@ public class Batlefield {
             }
             
         } else {
-            System.out.println(teams.get(shooterTeam).getSoldiers().size());
-            System.out.println(teams.get(enemyTeam).getSoldiers().size());
+            System.out.println("Koniec rozgrywki");
+            int winner = enemyTeam;
+            if (teams.get(shooterTeam).getSoldiers().size() > teams.get(shooterTeam).getSoldiers().size()) {
+                winner = shooterTeam;
+            }
+            System.out.printf("Wygrywa zespół %s", teams.get(winner).getName());
         }
     }
 
@@ -77,7 +81,7 @@ public class Batlefield {
     private boolean checkTeams(List<Team> teams) {
         for (Team team : teams) {
             if (team.getSoldiers().isEmpty()) {
-                System.out.println("Wszyscy w zespole %s nieżyją");
+                System.out.printf("Wszyscy w zespole %s nieżyją\n", team.getName());
                 return false;
             }
         }
