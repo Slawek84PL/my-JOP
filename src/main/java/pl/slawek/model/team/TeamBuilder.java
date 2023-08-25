@@ -25,7 +25,7 @@ public class TeamBuilder {
         System.out.println("\nPo stronie wroga walczą:");
 
         Team enemyTeam = new Team();
-        myTeam.setName("Wróg");
+        enemyTeam.setName("Wróg");
         enemyTeam.getSoldiers().addAll(soliderBuilder.build("Wróg", "de-AT"));
         teams.add(enemyTeam);
     }
