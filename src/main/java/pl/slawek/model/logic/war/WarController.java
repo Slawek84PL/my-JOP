@@ -3,9 +3,11 @@ package pl.slawek.model.logic.war;
 import pl.slawek.model.logic.PlayerMoveReader;
 import pl.slawek.model.logic.exception.WrongNumberException;
 import pl.slawek.model.soldiers.Soldier;
+import pl.slawek.model.soldiers.action.Action;
 import pl.slawek.model.soldiers.action.ActionList;
 
 import java.util.List;
+import java.util.Map;
 
 class WarController {
     private PlayerMoveReader playerMoveReader = new PlayerMoveReader();
@@ -17,9 +19,9 @@ class WarController {
     }
 
     void printOptions(ActionList actionList) {
-        for (int i = 0; i < actionList.getActionList().size(); i++) {
-            System.out.printf("%s", actionList.getActionList().get(i));
-            // TODO: 2023-08-25 zrobić iterację po hashMap i wyświetlić wszystkie opcje 
+        for (Map.Entry<Integer, Action> action : actionList.getActionList().entrySet()) {
+            int id = action.getKey() + CORECT_TO_LIST_INDEX;
+            System.out.printf("%s - %s\n", id, action.getValue().getActionName());
         }
     }
 
