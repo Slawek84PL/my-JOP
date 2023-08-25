@@ -22,9 +22,11 @@ public class War {
 
         } while (!teamBuilder.getTeams().get(0).getSoldiers().isEmpty() && !teamBuilder.getTeams().get(1).getSoldiers().isEmpty());
 
-        System.out.println(teamBuilder.getTeams().get(0).getSoldiers().size());
-        System.out.println(teamBuilder.getTeams().get(1).getSoldiers().size());
-        System.out.println(batlefield.getTeamOfTheDead().soldiers.toString());
+        System.err.println("Lista poległych");
+        
+        while (!batlefield.getTeamOfTheDead().soldiers.isEmpty()) {
+            System.out.println(batlefield.getTeamOfTheDead().soldiers.poll());
+        }
     }
 
 
