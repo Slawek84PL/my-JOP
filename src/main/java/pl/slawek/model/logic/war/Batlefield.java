@@ -28,6 +28,7 @@ public class Batlefield {
             } else {
                 System.out.println("\nWybierz żołnierza do ataku");
                 shooter = warController.getSoldierToGame(teams.get(shooterTeam).getSoldiers());
+                int action = warController.getShooterAction(shooter);
 
                 System.out.println("\nWybierz żołnierza którego chcesz zaatakować");
                 enemy = warController.getSoldierToGame(teams.get(enemyTeam).getSoldiers());

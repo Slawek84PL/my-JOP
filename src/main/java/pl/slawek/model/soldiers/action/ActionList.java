@@ -6,7 +6,7 @@ import java.util.Map;
 public class ActionList {
     Map<Integer, Action> actionList = new HashMap<>();
 
-    Map<Integer, Action> getActionList() {
+    public Map<Integer, Action> getActionList() {
         return actionList;
     }
 

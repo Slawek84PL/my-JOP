@@ -3,6 +3,7 @@ package pl.slawek.model.logic.war;
 import pl.slawek.model.logic.PlayerMoveReader;
 import pl.slawek.model.logic.exception.WrongNumberException;
 import pl.slawek.model.soldiers.Soldier;
+import pl.slawek.model.soldiers.action.ActionList;
 
 import java.util.List;
 
@@ -10,13 +11,19 @@ class WarController {
     private PlayerMoveReader playerMoveReader = new PlayerMoveReader();
     private final int CORECT_TO_LIST_INDEX = 1;
     private final int DEFOULT_VALUE = 0;
-    public void printOptions(Soldier soldier) {
-
-        System.out.println("Co chcesz zrobić?");
-        System.out.println("1 - Atak; 2 - przeładuj broń;");
+    int getShooterAction(final Soldier shooter) {
+        printOptions(shooter.getActionList());
+        return getPlayerAnswer(shooter.getActionList().getActionList().size());
     }
 
-    public Soldier getSoldierToGame(List<Soldier> soldierList) {
+    void printOptions(ActionList actionList) {
+        for (int i = 0; i < actionList.getActionList().size(); i++) {
+            System.out.printf("%s", actionList.getActionList().get(i));
+            // TODO: 2023-08-25 zrobić iterację po hashMap i wyświetlić wszystkie opcje 
+        }
+    }
+
+    Soldier getSoldierToGame(List<Soldier> soldierList) {
 
         for (int i = 0; i < soldierList.size(); i++) {
             Soldier soldier = soldierList.get(i);
@@ -29,7 +36,7 @@ class WarController {
         return soldierList.get(getPlayerAnswer(soldierList.size()));
     }
 
-    public int getPlayerAnswer(int maxValue) {
+    int getPlayerAnswer(int maxValue) {
         try {
             return  playerMoveReader.read(maxValue) - CORECT_TO_LIST_INDEX;
         } catch (WrongNumberException e) {
