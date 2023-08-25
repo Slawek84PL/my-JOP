@@ -24,6 +24,9 @@ public class Soldier extends Human implements SpecialActions {
     private int health = 10;
 
     @Getter
+    private int amo = 100;
+
+    @Getter
     private Weapon weapon;
 
     @Getter
@@ -44,5 +47,10 @@ public class Soldier extends Human implements SpecialActions {
     public void addSpecialActions() {
         this.actionList.addActionToList("Atak");
         this.actionList.addActionToList("Przeładuj broń");
+    }
+
+    public void reload() {
+        int amoToReload = this.weapon.reload();
+        this.amo -= amoToReload;
     }
 }

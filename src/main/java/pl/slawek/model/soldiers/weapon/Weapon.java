@@ -14,6 +14,7 @@ public class Weapon {
     @Getter
     private int amo;
 
+    @Getter
     private final int MAX_AMO = 50;
 
     public Weapon() {
@@ -27,7 +28,7 @@ public class Weapon {
         this.amo -= amo;
     }
 
-    protected int reload() {
+    public int reload() {
         return this.amo += MAX_AMO - this.amo;
     }
 }
