@@ -29,7 +29,7 @@ public class Batlefield {
                 shooter = teams.get(shooterTeam).getSoldiers().get(shooterInt);
                 action = new Random().nextInt(0, shooter.getActionList().getActionList().size());
                 enemy = teams.get(enemyTeam).getSoldiers().get(enemyInt);
-                soldierHelp = teams.get(enemyTeam).getSoldiers().get(forHelpInt);
+                soldierHelp = teams.get(shooterTeam).getSoldiers().get(forHelpInt);
             } else {
                 System.out.println("\nWybierz żołnierza do ataku");
                 shooter = warController.getSoldierToGame(teams.get(shooterTeam).getSoldiers());
