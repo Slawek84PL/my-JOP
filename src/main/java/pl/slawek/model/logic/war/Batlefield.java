@@ -17,16 +17,19 @@ public class Batlefield {
     public void fight(List<Team> teams, int shooterTeam, int enemyTeam, boolean auto) {
         Soldier shooter = null;
         Soldier enemy = null;
+        Soldier soldierHelp = null;
         int action;
 
         if (checkTeams(teams)) {
             if (auto) {
                 int shooterInt = new Random().nextInt(0, teams.get(shooterTeam).getSoldiers().size());
                 int enemyInt = new Random().nextInt(0, teams.get(enemyTeam).getSoldiers().size());
+                int forHelpInt = new Random().nextInt(0, teams.get(enemyTeam).getSoldiers().size());
 
                 shooter = teams.get(shooterTeam).getSoldiers().get(shooterInt);
                 action = new Random().nextInt(0, shooter.getActionList().getActionList().size());
                 enemy = teams.get(enemyTeam).getSoldiers().get(enemyInt);
+                soldierHelp = teams.get(enemyTeam).getSoldiers().get(forHelpInt);
             } else {
                 System.out.println("\nWybierz żołnierza do ataku");
                 shooter = warController.getSoldierToGame(teams.get(shooterTeam).getSoldiers());
@@ -46,7 +49,11 @@ public class Batlefield {
                     System.out.printf("%s przeładowuje broń\n", shooter.getName());
                     break;
                 case 2:
-                System.out.println("umiejętność specjalna");
+                    if (soldierHelp == null) {
+                        System.out.println("Wybierz żołnierza, któremu chcesz pomóc");
+                        soldierHelp = warController.getSoldierToGame(teams.get(shooterTeam).getSoldiers());
+                    }
+                    shooter.useSpecialAction(soldierHelp);
                     break;
             }
             

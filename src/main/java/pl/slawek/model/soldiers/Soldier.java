@@ -53,4 +53,7 @@ public class Soldier extends Human implements SpecialActions {
         int amoToReload = this.weapon.reload();
         this.amo -= amoToReload;
     }
+
+    public void useSpecialAction(Soldier soldierToGame) {
+    }
 }
