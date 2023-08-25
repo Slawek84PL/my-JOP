@@ -18,12 +18,14 @@ public class TeamBuilder {
         String teamName = scanner.nextLine();
 
         Team myTeam = new Team();
+        myTeam.setName(teamName);
         myTeam.getSoldiers().addAll(soliderBuilder.build(teamName, "pl"));
         teams.add(myTeam);
 
         System.out.println("\nPo stronie wroga walczą:");
 
         Team enemyTeam = new Team();
+        myTeam.setName("Wróg");
         enemyTeam.getSoldiers().addAll(soliderBuilder.build("Wróg", "de-AT"));
         teams.add(enemyTeam);
     }

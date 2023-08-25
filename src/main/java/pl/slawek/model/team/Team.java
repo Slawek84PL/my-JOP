@@ -13,6 +13,7 @@ import java.util.List;
 @ToString
 public class Team {
     private static int killedEnemies;
+    private String name;
 
     private List<Soldier> soldiers = new LinkedList<>();
 
