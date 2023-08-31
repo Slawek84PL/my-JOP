@@ -16,5 +16,6 @@ public class WordsFromJOP {
         words.add(new Word(7, "prostu", 9, 4, "03:17"));
         words.add(new Word(11, "świetnymi", 10, 7,"05:57"));
         words.add(new Word(1, "Każdy", 1, 2, "00:12"); //EAI
+        words.add(new Word(2, "głupiec", 2, 8, "13:41"); //EAI
     }
 }
