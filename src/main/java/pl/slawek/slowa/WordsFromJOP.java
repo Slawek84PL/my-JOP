@@ -16,8 +16,9 @@ public class WordsFromJOP {
         words.add(new Word(7, "prostu", 9, 4, "03:17"));
         words.add(new Word(11, "świetnymi", 10, 7,"05:57"));
         words.add(new Word(5, "jestem", 11, 6,"10:08"));
-        words.add(new Word(1, "Każdy", 1, 2, "00:12"); //EAI
-        words.add(new Word(2, "głupiec", 2, 8, "13:41"); //EAI
-        words.add(new Word(3, "świetnym", 11, 12, "01:05");
+        words.add(new Word(1, "Każdy", 1, 2, "00:12")); //EAI
+        words.add(new Word(2, "głupiec", 2, 8, "13:41")); //EAI
+        words.add(new Word(3, "świetnym", 11, 12, "01:05"));
+        words.add(new Word(2, "jestem", 12, 2, "01:10"));
     }
 }
