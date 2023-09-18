@@ -21,5 +21,6 @@ public class WordsFromJOP {
         words.add(new Word(3, "świetnym", 11, 12, "01:05"));
         words.add(new Word(2, "jestem", 12, 2, "01:10"));
         words.add(new Word(3, "może", 3, 2, "04:17")); //EAI
+        words.add(new Word(5, "kod", 5, 8, "05:51")); //EAI
     }
 }
