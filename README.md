@@ -10,8 +10,8 @@ Po każdym zakończonym module kod będzie się zmieniał i ewolułował.
 - [X] Moduł 5
 - [X] Moduł 6
 - [X] Moduł 7
-- [ ] Moduł 8
-- [ ] Moduł 9
-- [ ] Moduł 10
-- [ ] Moduł 11
-- [ ] Moduł 12
+- [X] Moduł 8
+- [X] Moduł 9
+- [X] Moduł 10
+- [X] Moduł 11
+- [X] Moduł 12
